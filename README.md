@@ -21,7 +21,7 @@ Repository for Project 1 for IGME 202 during Fall 2022.
 
 A brief explanation of your game. Inculde what is the objective for the player. Think about what would go on the back of a game box.
 
-Player controls a man swimming in a large body of water, collecting drift wood. The player will need to collect all drift woods in the level in order to move on before they run out of stamina.
+Player controls a man swimming in a large body of water, collecting rum. The player will need to collect all rum in the level in order to move on before they run out of stamina.
 
 ### Controls
 
@@ -39,7 +39,7 @@ List out what you added to your game to make it different for you
   There will be a slight dash for the player but it will slightly decrease the timer.
 3. Add in obstacles; rocks or items that the player may have to also dodge while fighting enemies.
 List may change depending on progress.
-  They will only need to dodge the enemies but there will be more spawned each level. There may be different kinds of enemies.
+  Each different kind of enemy will move in a different way.
 
 ## Sources
 
@@ -47,6 +47,8 @@ List may change depending on progress.
 asset credit: 
 - https://opengameart.org/content/nice-looking-guy
 - https://craftpix.net/freebies/free-swamp-bosses-pixel-art-character-pack/?num=1&count=48&sq=swamp%20boss&pos=7
+- https://craftpix.net/freebies/free-pirate-stuff-pixel-art-icons/?num=2&count=83&sq=wood&pos=7
+- https://craftpix.net/freebies/free-underwater-world-parallax-game-backgrounds/?num=1&count=65&sq=water&pos=11
 
 -   If an asset is from the Unity store, include a link to the page and the author’s name
 
