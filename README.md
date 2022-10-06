@@ -44,7 +44,10 @@ List may change depending on progress.
 ## Sources
 
 -   List all project sources here –models, textures, sound clips, assets, etc.
-asset credit: https://opengameart.org/content/nice-looking-guy
+asset credit: 
+- https://opengameart.org/content/nice-looking-guy
+- https://craftpix.net/freebies/free-swamp-bosses-pixel-art-character-pack/?num=1&count=48&sq=swamp%20boss&pos=7
+
 -   If an asset is from the Unity store, include a link to the page and the author’s name
 
 ## Known Issues
