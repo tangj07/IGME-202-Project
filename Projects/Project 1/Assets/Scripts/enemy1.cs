@@ -1,21 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Vehicle : MonoBehaviour
+public class enemy1 : MonoBehaviour
 {
-    [SerializeField]
-    float speed = 1f;
+    float speed = 3f;
 
     Vector3 position = Vector3.zero;
 
-    Vector3 direction = Vector3.zero;
+    Vector3 direction = Vector3.left;
 
     Vector3 velocity = Vector3.zero;
-
-    //[SerializeField]
-    //float turnamount = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +24,9 @@ public class Vehicle : MonoBehaviour
         //Make sure direction is normalized
         direction.Normalize();
         //turn the vehicle by some angle
-        //direction = Quaternion.EulerAngles(0, 0, turnamount * Time.deltaTime) * direction;
         //Calculate velocity
         velocity = direction * speed * Time.deltaTime;
         // Add velocity to postition
-        //if (Input.anyKeyDown) { }
         position += velocity;
 
         if (direction != Vector3.zero)
@@ -48,17 +41,12 @@ public class Vehicle : MonoBehaviour
         Bounds bounds = new Bounds(
             camera.transform.position,
             new Vector3(cameraHeight * screenAspect, cameraHeight, 0));
-        //float height = 2f * cam.orthographicSize;
-        //float width = height * cam.aspect;
-        //float height = Screen.currentResolution.height;
-        //float width = Screen.currentResolution.width;
-        float height = cameraHeight*0.5f;
-        float width = cameraHeight * screenAspect/2;
-        //float height = 5.6f;
-        //float width = 9.6f;
+        float height = cameraHeight * 0.5f;
+        float width = cameraHeight * screenAspect / 2;
+
         if (position.y > height)
         {
-            position.y = -1*height;
+            position.y = -1 * height;
         }
         else if (position.y < -1 * height)
         {
@@ -71,14 +59,6 @@ public class Vehicle : MonoBehaviour
         else if (position.x < -1 * width)
         {
             position.x = width;
-        }
-    }
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        direction = context.ReadValue<Vector2>();
-        if (direction != Vector3.zero)
-        {
-            transform.rotation = Quaternion.LookRotation(Vector3.back, direction);
         }
     }
 }
