@@ -5,12 +5,10 @@ using UnityEngine;
 public class enemy1 : MonoBehaviour
 {
     float speed = 3f;
+    Vector3 position = Vector3.zero, direction = Vector3.left, velocity = Vector3.zero;
 
-    Vector3 position = Vector3.zero;
-
-    Vector3 direction = Vector3.left;
-
-    Vector3 velocity = Vector3.zero;
+    public float x, y, width, height;
+    public CollisionDetection temp;
 
     // Start is called before the first frame update
     void Start()
@@ -21,17 +19,12 @@ public class enemy1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Make sure direction is normalized
         direction.Normalize();
-        //turn the vehicle by some angle
-        //Calculate velocity
         velocity = direction * speed * Time.deltaTime;
-        // Add velocity to postition
         position += velocity;
 
         if (direction != Vector3.zero)
         {
-            //Draw the vehicle at that position
             transform.position = position;
         }
         //warping stuff
@@ -60,5 +53,11 @@ public class enemy1 : MonoBehaviour
         {
             position.x = width;
         }
+
+        temp = gameObject.GetComponent(typeof(CollisionDetection)) as CollisionDetection;
+        x = temp.x;
+        y = temp.y;
+        width = temp.width;
+        height = temp.height;
     }
 }

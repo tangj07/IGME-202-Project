@@ -9,14 +9,13 @@ public class Vehicle : MonoBehaviour
     float speed = 1f;
 
     Vector3 position = Vector3.zero;
-
     Vector3 direction = Vector3.zero;
-
     Vector3 velocity = Vector3.zero;
 
-    //[SerializeField]
-    //float turnamount = 0f;
-
+    private float delay = 0.3f, bullettime=-1;
+    public GameObject bullet;
+    bool fire;
+    string lastkey;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +28,9 @@ public class Vehicle : MonoBehaviour
         //Make sure direction is normalized
         direction.Normalize();
         //turn the vehicle by some angle
-        //direction = Quaternion.EulerAngles(0, 0, turnamount * Time.deltaTime) * direction;
         //Calculate velocity
         velocity = direction * speed * Time.deltaTime;
         // Add velocity to postition
-        //if (Input.anyKeyDown) { }
         position += velocity;
 
         if (direction != Vector3.zero)
@@ -47,15 +44,9 @@ public class Vehicle : MonoBehaviour
         float cameraHeight = camera.orthographicSize * 2;
         Bounds bounds = new Bounds(
             camera.transform.position,
-            new Vector3(cameraHeight * screenAspect, cameraHeight, 0));
-        //float height = 2f * cam.orthographicSize;
-        //float width = height * cam.aspect;
-        //float height = Screen.currentResolution.height;
-        //float width = Screen.currentResolution.width;
+            new Vector3(cameraHeight * screenAspect, cameraHeight, 0)); 
         float height = cameraHeight*0.5f;
         float width = cameraHeight * screenAspect/2;
-        //float height = 5.6f;
-        //float width = 9.6f;
         if (position.y > height)
         {
             position.y = -1*height;
@@ -72,13 +63,30 @@ public class Vehicle : MonoBehaviour
         {
             position.x = width;
         }
+        if (fire && bullettime>0)
+        {
+            bullettime -= Time.deltaTime;
+        }
+        else if (bullettime <= 0)
+        {
+            fire = false;
+        }
     }
     public void OnMove(InputAction.CallbackContext context)
     {
         direction = context.ReadValue<Vector2>();
         if (direction != Vector3.zero)
         {
-            transform.rotation = Quaternion.LookRotation(Vector3.back, direction);
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
         }
+    }
+    public void Pewpew()
+    {
+        if(bullettime <= 0)
+        {
+            Instantiate(bullet, new Vector3(position.x, position.y, 0), transform.rotation);
+            bullettime = delay;
+        }
+        fire = true;
     }
 }

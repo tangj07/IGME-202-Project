@@ -15,18 +15,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "ChangeToAABB",
+                    "name": "Shoot",
                     "type": "Button",
-                    "id": "06dd8df1-5b34-4cfc-b202-743366bc63f4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ChangeToCircle",
-                    "type": "Button",
-                    "id": "4646fb67-4f5c-4978-91c2-fd8640ef1ecb",
+                    "id": "14983b84-9060-435a-bf78-93f1d7e9f9e3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -146,23 +137,12 @@
                 },
                 {
                     "name": "",
-                    "id": "70ebc405-cb47-4734-b968-5d54d367d523",
-                    "path": "<Keyboard>/v",
-                    "interactions": "",
+                    "id": "c4565ecf-af9a-4651-97a4-cd9f16837dd2",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "ChangeToAABB",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4757b7fc-a495-4cd5-9f03-8e7d804e8ab1",
-                    "path": "<Keyboard>/c",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "ChangeToCircle",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
