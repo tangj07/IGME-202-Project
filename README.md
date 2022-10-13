@@ -11,17 +11,17 @@ Repository for Project 1 for IGME 202 during Fall 2022.
 
 ## Game Design
 
--   Camera Orientation: Topdown (ie. topdown or side)
--   Camera Movement: Stilled (if at all)
--   Player Health: Amount of lives. (healthbar, lives, ?)
--   End Condition: When they collect everything before the timer ends. How does a game/round/level end?
--   Scoring: No score; will have to collect all items. How does the player earn points in your game?
+-   Camera Orientation: Topdown
+-   Camera Movement: Stilled
+-   Player Health: Amount of lives. (5 lives)
+-   End Condition: When they collect everything before the timer ends.
+-   Scoring: No score; will have to collect all items. 
 
 ### Game Description
 
-A brief explanation of your game. Inculde what is the objective for the player. Think about what would go on the back of a game box.
-
 Player controls a man swimming in a large body of water, collecting rum. The player will need to collect all rum in the level in order to move on before they run out of stamina.
+-   Player wraps through bounds.
+-   Centipede enemy(2 lives) moves to the left and wraps; slime enemy(3 lives) moves down spinning and wraps.
 
 ### Controls
 
@@ -40,6 +40,7 @@ List out what you added to your game to make it different for you
 3. Add in obstacles; rocks or items that the player may have to also dodge while fighting enemies.
 List may change depending on progress.
   Each different kind of enemy will move in a different way.
+-   Both enemies have animations.
 
 ## Sources
 
