@@ -73,6 +73,14 @@ public class Vehicle : MonoBehaviour
         {
             speed = 3;
         }
+        if (speedtime < 0)
+        {
+            speedtime = 0;
+        }
+        if(cooldown < 0)
+        {
+            cooldown = 0;
+        }
     }
     public void OnMove(InputAction.CallbackContext context)
     {
