@@ -423,6 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy1: []
+  _enemy2: []
   bullets: []
   player: {fileID: 637849207}
   isCurrentlyColliding: 0
@@ -440,7 +441,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &420191811
 MonoBehaviour:
@@ -455,6 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7273393617260476748, guid: 985b3d820bf3f574d92b4ccec59d80fd, type: 3}
+  enemy2: {fileID: 2353232341894521381, guid: 07b0050f9da3e7540b390925b99709b3, type: 3}
 --- !u!114 &637849207 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7934463066845957000, guid: d701cf6e6ed68dc4c9d0f91502939e13, type: 3}
@@ -639,8 +641,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902841218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.28, z: 50}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.01, y: -0.74, z: 50}
+  m_LocalScale: {x: 0.83817005, y: 1.081514, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1148139697}
@@ -700,15 +702,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4788799312027177570, guid: d701cf6e6ed68dc4c9d0f91502939e13, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4788799312027177570, guid: d701cf6e6ed68dc4c9d0f91502939e13, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.65
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 4788799312027177570, guid: d701cf6e6ed68dc4c9d0f91502939e13, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.12
+      value: -3.84
       objectReference: {fileID: 0}
     - target: {fileID: 4788799312027177570, guid: d701cf6e6ed68dc4c9d0f91502939e13, type: 3}
       propertyPath: m_LocalPosition.z

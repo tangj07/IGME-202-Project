@@ -6,7 +6,9 @@ public class Shooting : MonoBehaviour
 {
     public float speed = 5f, time = 0.1f;
 
+    [HideInInspector]
     public float x, y, width, height;
+    [HideInInspector]
     public CollisionDetection temp;
 
     // Update is called once per frame
