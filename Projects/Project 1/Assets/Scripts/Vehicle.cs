@@ -25,14 +25,9 @@ public class Vehicle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Make sure direction is normalized
         direction.Normalize();
-        //turn the vehicle by some angle
-        //Calculate velocity
         velocity = direction * speed * Time.deltaTime;
-        // Add velocity to postition
         position += velocity;
-
         if (direction != Vector3.zero)
         {
             //Draw the vehicle at that position

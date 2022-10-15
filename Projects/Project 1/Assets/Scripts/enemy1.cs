@@ -52,7 +52,6 @@ public class enemy1 : MonoBehaviour
         y = temp.y;
         width = temp.width;
         height = temp.height;
-        
     }
     bool death()
     {

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4640177407413080730}
   - component: {fileID: 951958125226180804}
   - component: {fileID: 7957293179387139625}
+  - component: {fileID: -4806338252789477237}
   m_Layer: 0
   m_Name: Rum
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1611872590757378687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.519427, y: -3.5999675, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,3 +102,15 @@ MonoBehaviour:
   y: 0
   width: 0
   height: 0
+--- !u!114 &-4806338252789477237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611872590757378687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d449dc4e52792408132069be81cf74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
