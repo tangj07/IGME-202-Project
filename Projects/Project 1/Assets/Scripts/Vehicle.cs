@@ -11,11 +11,9 @@ public class Vehicle : MonoBehaviour
     Vector3 position = Vector3.zero;
     Vector3 direction = Vector3.zero;
     Vector3 velocity = Vector3.zero;
-
-    private float delay = 0.3f, bullettime=-1;
+    private float delay = 0.3f, speedtime = 0, cooldown = 0, bullettime=-1;
     public GameObject bullet;
     bool fire;
-    string lastkey;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +28,6 @@ public class Vehicle : MonoBehaviour
         position += velocity;
         if (direction != Vector3.zero)
         {
-            //Draw the vehicle at that position
             transform.position = position;
         }
         //warping stuff
@@ -66,6 +63,23 @@ public class Vehicle : MonoBehaviour
         {
             fire = false;
         }
+        if(speedtime>0)
+        {
+            cooldown -= Time.deltaTime;
+            speedtime -= Time.deltaTime;
+        }
+        else if (cooldown <= 0)
+        {
+            speed = 3;
+        }
+        if (speedtime < 0)
+        {
+            speedtime = 0;
+        }
+        if(cooldown < 0)
+        {
+            cooldown = 0;
+        }
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -83,5 +97,9 @@ public class Vehicle : MonoBehaviour
             bullettime = delay;
         }
         fire = true;
+    }
+    public void Speedup()
+    {
+        if(speedtime<=0) { speed = 5; cooldown = 2; speedtime = 4; }
     }
 }
