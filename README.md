@@ -48,10 +48,10 @@ List may change depending on progress.
 
 -   List all project sources here –models, textures, sound clips, assets, etc.
 asset credit: 
-- https://opengameart.org/content/nice-looking-guy(player sprite)
-- https://craftpix.net/freebies/free-swamp-bosses-pixel-art-character-pack/?num=1&count=48&sq=swamp%20boss&pos=7(enemies sprites)
-- https://craftpix.net/freebies/free-pirate-stuff-pixel-art-icons/?num=2&count=83&sq=wood&pos=7(rum sprite)
-- https://craftpix.net/freebies/free-underwater-world-parallax-game-backgrounds/?num=1&count=65&sq=water&pos=11(background sprite)
+- https://opengameart.org/content/nice-looking-guy (player sprite)
+- https://craftpix.net/freebies/free-swamp-bosses-pixel-art-character-pack/?num=1&count=48&sq=swamp%20boss&pos=7 (enemies sprites)
+- https://craftpix.net/freebies/free-pirate-stuff-pixel-art-icons/?num=2&count=83&sq=wood&pos=7 (rum sprite)
+- https://craftpix.net/freebies/free-underwater-world-parallax-game-backgrounds/?num=1&count=65&sq=water&pos=11 (background sprite)
 
 ## Known Issues
 - Death animations are not properly working.
