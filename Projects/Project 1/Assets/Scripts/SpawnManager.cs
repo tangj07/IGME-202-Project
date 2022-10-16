@@ -8,11 +8,16 @@ public class SpawnManager : MonoBehaviour
     GameObject enemy;
     [SerializeField]
     GameObject enemy2;
+    [SerializeField]
+    GameObject rum;
+    [SerializeField]
+    CollisionManager manager;
 
-    float two = 2, four = 4;
+    float two = 2, four = 4, rumtime= 10;
     // Start is called before the first frame update
     void Start()
     {
+        manager = FindObjectOfType<CollisionManager>();
         for (int i = 0; i < 4; i++)
         {
             GameObject temp;
@@ -25,6 +30,7 @@ public class SpawnManager : MonoBehaviour
         }
         StartCoroutine(TimeSpawn());
         StartCoroutine(TimeSpawn2());
+        StartCoroutine(TimeSpawn3());
     }
 
     // Update is called once per frame
@@ -36,7 +42,7 @@ public class SpawnManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(two);
-            Spawn();
+            if (!manager.dead) { Spawn(); }
         }
     }
     IEnumerator TimeSpawn2()
@@ -44,7 +50,15 @@ public class SpawnManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(four);
-            Spawn2();
+            if (!manager.dead) { Spawn2(); }
+        }
+    }
+    IEnumerator TimeSpawn3()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(rumtime);
+            if (!manager.dead) { Spawn3(); }
         }
     }
     void Spawn()
@@ -56,5 +70,10 @@ public class SpawnManager : MonoBehaviour
     {
         GameObject temp;
         temp = Instantiate(enemy2, new Vector3(Random.Range(-7.8f, 7.8f), 4, 0), transform.rotation);
+    }
+    void Spawn3()
+    {
+        GameObject temp;
+        temp = Instantiate(rum, new Vector3(Random.Range(-7.61f, 7.61f), Random.Range(-4.48f, 4.48f), 0), transform.rotation);
     }
 }

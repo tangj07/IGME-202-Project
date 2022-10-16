@@ -8,6 +8,7 @@ public class Rum : MonoBehaviour
     public float x, y, width, height;
     [HideInInspector]
     public CollisionDetection temp;
+    public bool hit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +23,9 @@ public class Rum : MonoBehaviour
         y = temp.y;
         width = temp.width;
         height = temp.height;
+        if(hit)
+        {
+            Destroy(gameObject);
+        }
     }
 }

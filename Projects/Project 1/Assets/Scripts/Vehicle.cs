@@ -7,16 +7,18 @@ public class Vehicle : MonoBehaviour
 {
     [SerializeField]
     float speed = 1f;
-
     Vector3 position = Vector3.zero;
     Vector3 direction = Vector3.zero;
     Vector3 velocity = Vector3.zero;
     private float delay = 0.3f, speedtime = 0, cooldown = 0, bullettime=-1;
     public GameObject bullet;
     bool fire;
+    [SerializeField]
+    CollisionManager manager;
     // Start is called before the first frame update
     void Start()
     {
+        manager = FindObjectOfType<CollisionManager>();
         position = transform.position;
     }
 
@@ -26,6 +28,10 @@ public class Vehicle : MonoBehaviour
         direction.Normalize();
         velocity = direction * speed * Time.deltaTime;
         position += velocity;
+        if (manager.dead)
+        {
+            direction = Vector3.zero;
+        }
         if (direction != Vector3.zero)
         {
             transform.position = position;
@@ -91,12 +97,15 @@ public class Vehicle : MonoBehaviour
     }
     public void Pewpew()
     {
-        if(bullettime <= 0)
+        if (!manager.dead)
         {
-            Instantiate(bullet, new Vector3(position.x, position.y, 0), transform.rotation);
-            bullettime = delay;
+            if (bullettime <= 0)
+            {
+                Instantiate(bullet, new Vector3(position.x, position.y, 0), transform.rotation);
+                bullettime = delay;
+            }
+            fire = true;
         }
-        fire = true;
     }
     public void Speedup()
     {

@@ -13,10 +13,13 @@ public class enemy1 : MonoBehaviour
     public float x, y, width, height;
     [HideInInspector]
     public CollisionDetection temp;
+    [SerializeField]
+    CollisionManager manager;
 
     // Start is called before the first frame update
     void Start()
     {
+        manager = FindObjectOfType<CollisionManager>();
         hp = 1f;
         position = transform.position;
         StartCoroutine(deathdelay());
@@ -29,7 +32,10 @@ public class enemy1 : MonoBehaviour
         direction.Normalize();
         velocity = direction * speed * Time.deltaTime;
         position += velocity;
-
+        if (manager.dead)
+        {
+            direction = Vector3.zero;
+        }
         if (direction != Vector3.zero)
         {
             transform.position = position;
